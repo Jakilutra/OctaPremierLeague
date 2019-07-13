@@ -1,6 +1,6 @@
 # OctaPremierLeague
 
-### Contains up to 20 sheets
+### Contains up to 21 sheets
 
 * Config
 * Manager Signups
