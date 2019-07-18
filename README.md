@@ -6,7 +6,7 @@
 * Manager Signups
 * Auction Scheduling 
 * Player Signups (Enhanced by Auction)
-* Auction
+* Auction (Enhanced by Player Signups)
 * Power Rankings
 * Helpers
 * Hosts
