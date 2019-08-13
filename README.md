@@ -6,6 +6,7 @@
 * Manager Signups
 * Auction Scheduling 
 * Player Signups (Enhanced by Auction)
+* Midseason Signups (Enhanced by Auction - close to Player Signups)
 * Auction (Requires Player Signups)
 * Power Rankings
 * Helpers
