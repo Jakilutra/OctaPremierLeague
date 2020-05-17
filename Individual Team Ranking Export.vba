@@ -21,12 +21,14 @@
 				(N(ISNUMBER(FIND("Win",U6:U13)))*20000
 				+N(ISNUMBER(FIND("Tie",U6:U13)))*10000
 				+REGEXEXTRACT(U6:U13,"(\d\d?)-")*100
-				-IFERROR(REGEXEXTRACT(U6:U13,"-(\d\d?)]"),0)*2+(REGEXEXTRACT(U6:U13,"(\d\d?)-")+REGEXEXTRACT(U6:U13,"-(\d\d?)")-Config!$F$4))
+				-IFERROR(REGEXEXTRACT(U6:U13,"-(\d\d?)]"),0)*2
+				+(REGEXEXTRACT(U6:U13,"(\d\d?)-")+REGEXEXTRACT(U6:U13,"-(\d\d?)")-Config!$F$4))
 				,SPLIT(JOIN(",",ARRAYFORMULA(
 				(N(ISNUMBER(FIND("Win",U6:U13)))*20000
 				+N(ISNUMBER(FIND("Tie",U6:U13)))*10000
 				+REGEXEXTRACT(U6:U13,"(\d\d?)-")*100
-				-IFERROR(REGEXEXTRACT(U6:U13,"-(\d\d?)]"),0)*2+(REGEXEXTRACT(U6:U13,"(\d\d?)-")+REGEXEXTRACT(U6:U13,"-(\d\d?)")-Config!$F$4)))),","),0)&"[/B][/SIZE]"
+				-IFERROR(REGEXEXTRACT(U6:U13,"-(\d\d?)]"),0)*2
+				+(REGEXEXTRACT(U6:U13,"(\d\d?)-")+REGEXEXTRACT(U6:U13,"-(\d\d?)")-Config!$F$4)))),","),0)&"[/B][/SIZE]"
 			),
 			ARRAYFORMULA("[IMG width='80px']"&$AK$6:$AK$13&"[/IMG]"),"[B][COLOR="&$AJ$6:$AJ$13&"]"&$B$6:$B$13&"[/COLOR][/B]",
 			ARRAYFORMULA(SUBSTITUTE("@"&$C$6:$C$13,CHAR(10),CHAR(10)&" @")),
