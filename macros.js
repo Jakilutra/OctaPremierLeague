@@ -16,6 +16,36 @@ function TeamRankUpdate() {
   spreadsheet.toast("The Team Rankings have been sorted!");  
 };
 
+function PlayerRankUpdate() {
+
+  // Declaring sheet variables.
+  
+  var spreadsheet = {},
+      tSheet = {};
+  
+  // Assigning sheet variables.
+        
+  spreadsheet = SpreadsheetApp.getActive();
+  qrSheet = spreadsheet.getSheetByName("Quick Ranking");
+
+  // Sorting Quick Rankings.  
+  
+  qrSheet.getRange('B6:D13').activate().sort([{column: 3, ascending: false},{column: 4, ascending: true}]);
+  qrSheet.getRange('B14:D').activate().sort([{column: 3, ascending: false},{column: 4, ascending: true}]);
+  qrSheet.getRange('E6:G13').activate().sort([{column: 6, ascending: false},{column: 7, ascending: true}]);
+  qrSheet.getRange('E14:G').activate().sort([{column: 6, ascending: false},{column: 7, ascending: true}]);
+  qrSheet.getRange('H6:J13').activate().sort([{column: 9, ascending: false},{column: 10, ascending: true}]);
+  qrSheet.getRange('H14:J').activate().sort([{column: 9, ascending: false},{column: 10, ascending: true}]);
+  qrSheet.getRange('K6:M13').activate().sort([{column: 12, ascending: false},{column: 13, ascending: true}]);
+  qrSheet.getRange('K14:M').activate().sort([{column: 12, ascending: false},{column: 13, ascending: true}]);
+  qrSheet.getRange('N6:P13').activate().sort([{column: 15, ascending: false},{column: 16, ascending: true}]);
+  qrSheet.getRange('N14:P').activate().sort([{column: 15, ascending: false},{column: 16, ascending: true}]);
+  qrSheet.getRange('Q6:S13').activate().sort([{column: 18, ascending: false},{column: 19, ascending: true}]);
+  qrSheet.getRange('Q14:S').activate().sort([{column: 18, ascending: false},{column: 19, ascending: true}]);
+  spreadsheet.toast("The Quick Rankings have been sorted!");   
+
+};
+
 function BracketsUpdate() {
   
   // Declaring sheet variables.
