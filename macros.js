@@ -21,12 +21,20 @@ function PlayerRankUpdate() {
   // Declaring sheet variables.
   
   var spreadsheet = {},
-      tSheet = {};
+      qrSheet = {},
+      configSheet = {},
+      teamValues = [];
+      teamSheets = [];
   
   // Assigning sheet variables.
         
   spreadsheet = SpreadsheetApp.getActive();
   qrSheet = spreadsheet.getSheetByName("Quick Ranking");
+  configSheet = spreadsheet.getSheetByName("Config");
+  teamValues = configSheet.getRange('B10:B17').getValues();
+  for (let team of teamValues) {
+    teamSheets.push(team[0].replace(/(.*\s)/,""));
+  }
 
   // Sorting Quick Rankings.  
   
@@ -42,6 +50,12 @@ function PlayerRankUpdate() {
   qrSheet.getRange('N14:P').activate().sort([{column: 15, ascending: false},{column: 16, ascending: true}]);
   qrSheet.getRange('Q6:S13').activate().sort([{column: 18, ascending: false},{column: 19, ascending: true}]);
   qrSheet.getRange('Q14:S').activate().sort([{column: 18, ascending: false},{column: 19, ascending: true}]);
+
+  for (let team of teamSheets){
+    let sheet = spreadsheet.getSheetByName(team);
+    sheet.getRange('B8:F').activate().sort([{column: 5, ascending: false},{column: 6, ascending: true}]);
+  }
+
   spreadsheet.toast("The Quick Rankings have been sorted!");   
 
 };
