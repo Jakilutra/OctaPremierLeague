@@ -23,7 +23,7 @@ function PlayerRankUpdate() {
   var spreadsheet = {},
       qrSheet = {},
       configSheet = {},
-      teamValues = [];
+      teamValues = [],
       teamSheets = [];
   
   // Assigning sheet variables.
